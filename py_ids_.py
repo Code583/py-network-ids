@@ -24,6 +24,8 @@ def packet_analysing(PKT):
                 if IP_tries[IP_origin] == 11:
                     print(msg)
                     logging.info(msg)
+                    IP_tries[IP_origin] = 0
 
 print("Monitoring the newtork... (Press Ctrl+C to stop)")
+
 sniff(filter="ip", prn=packet_analysing, store=0)
